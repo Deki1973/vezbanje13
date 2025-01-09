@@ -2,6 +2,7 @@ package demo.userservice.home.dto;
 
 public class UserDto {
     // vezbamo branchovanje
+    // vidi https://graphite.dev/guides/how-to-sync-git-branch-with-main
     
     private Long id;
 
