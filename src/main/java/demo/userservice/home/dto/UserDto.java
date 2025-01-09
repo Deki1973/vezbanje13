@@ -1,10 +1,8 @@
 package demo.userservice.home.dto;
 
-import demo.userservice.home.model.Role;
-
 public class UserDto {
 
-   private Long id;
+    private Long id;
 
     public Long getId() {
         return id;
@@ -31,5 +29,5 @@ public class UserDto {
     }
 
     private String role;
-   private Boolean active;
+    private Boolean active;
 }
