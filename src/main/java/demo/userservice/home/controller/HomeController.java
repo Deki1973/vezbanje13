@@ -33,15 +33,17 @@ public class HomeController {
     @PutMapping("/upd/{id}")
     public int updateUser(@PathVariable Long id){
         System.out.println("pozvan je kontroller upadteUser");
-        return userRepo.promoteUser(id);
+        //return userRepo.promoteUser(id);
+        return userSrv.promoteUser(id);
 
     }
     @PutMapping("/deg/{id}")
     public int degradeUser(@PathVariable Long id){
         System.out.println("pozvan je kontroler degrade user...");
         //return degradeUser(id);
+
         //return userRepo.degradeUser(id);
-        return userRepo.degradeUser(id);
+        return userSrv.degradeUser(id);
     }
 
     @PutMapping("/{id}")
@@ -49,6 +51,7 @@ public class HomeController {
         System.out.println("pozvan je kontroller degradeUser");
         return userSrv.updateUser(id,userDto.getActive(),userDto.getRole());
        //return userRepo.updateUser(id,userDto.getActive(),userDto.getRole());
+
 
 
     }
