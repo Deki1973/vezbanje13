@@ -1,12 +1,9 @@
 package demo.userservice.home.model;
 
-
 import jakarta.persistence.*;
-
-
 import java.io.Serializable;
 import java.util.Objects;
-// proba proba
+
 @Entity
 @Table(name = "users")
 public class User implements Serializable {

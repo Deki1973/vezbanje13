@@ -12,12 +12,11 @@ import java.util.List;
 @RestController
 public class HomeController {
 
-    // proba proba
     @Autowired
     private UserSrv userSrv;
 
-    @Autowired
-    private UserRepo userRepo;
+   // @Autowired
+   // private UserRepo userRepo;
 
     @GetMapping("/")
     public String hello(){
@@ -26,29 +25,27 @@ public class HomeController {
 
     @GetMapping("/getall")
     public List<User> getAll(){
-
-       return userSrv.getAll();
+        System.out.println("Pozvan je kontroler getall...");
+        return userSrv.getAll();
     }
 
     @PutMapping("/upd/{id}")
     public int updateUser(@PathVariable Long id){
-        System.out.println("pozvan je kontroller upadteUser");
-        return userRepo.promoteUser(id);
+        System.out.println("Pozvan je kontroller upadteUser...");
+        return userSrv.promoteUser(id);
 
     }
     @PutMapping("/deg/{id}")
     public int degradeUser(@PathVariable Long id){
         System.out.println("pozvan je kontroler degrade user...");
-        //return degradeUser(id);
-        //return userRepo.degradeUser(id);
-        return userRepo.degradeUser(id);
+        return userSrv.degradeUser(id);
     }
 
     @PutMapping("/{id}")
     public int updateUser(@PathVariable Long id, @RequestBody UserDto userDto){
-        System.out.println("pozvan je kontroller degradeUser");
+        System.out.println("Pozvan je kontroller degradeUser...");
         return userSrv.updateUser(id,userDto.getActive(),userDto.getRole());
-       //return userRepo.updateUser(id,userDto.getActive(),userDto.getRole());
+
 
 
     }

@@ -12,6 +12,9 @@ public interface UserRepo extends JpaRepository<User,Long> {
 
     @Modifying
     @Transactional
+    // @Transactional nije obavezno u ovom slucaju.
+    // Koristi se kada imas vise iskaza koje treba izvrsiti u batchu.
+    // Ili izvrsi sve, ili se u slucaju neuspeha vrati na pocetak.
     @Query(nativeQuery = true,
             value = "UPDATE users SET role='ADMIN' WHERE id=:userId")
     int promoteUser(Long userId);

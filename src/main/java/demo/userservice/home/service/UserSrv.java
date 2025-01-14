@@ -24,13 +24,12 @@ import java.util.function.Function;
 public class UserSrv {
 
     //@Autowired
+    // Parametarizovan konstruktor je pouzdaniji od
+    // @Autowired notacije
     private UserRepo userRepo;
     public UserSrv(UserRepo userRepo){
         this.userRepo=userRepo;
     }
-
-
-
 
     public List<User> getAll() {
         return userRepo.findAll();
